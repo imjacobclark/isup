@@ -63,3 +63,4 @@ typings/
 
 cdk.out
 bin
+lib/*.js
