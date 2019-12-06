@@ -1,0 +1,486 @@
+{
+  "version": "1.16.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "IsupStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "IsupStack.template.json"
+      },
+      "metadata": {
+        "/IsupStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8",
+              "id": "25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8",
+              "packaging": "zip",
+              "sourceHash": "25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8",
+              "s3BucketParameter": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3BucketDE6421E3",
+              "s3KeyParameter": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3VersionKey967ED7C1",
+              "artifactHashParameter": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8ArtifactHash3852216B"
+            },
+            "trace": [
+              "IsupStack.addFileAsset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/stack.ts:524:17)",
+              "new Asset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:424:29)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/IsupHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupIsupHandlerServiceRole6D52EFB2",
+            "trace": [
+              "new Role (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:414:31)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/IsupHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupIsupHandler87FD3F73",
+            "trace": [
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:427:35)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiF0E94915",
+            "trace": [
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:229:22)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiDeployment12B17A4E86a7b8c49711f01deedb1c3fdeca4450",
+            "trace": [
+              "new Deployment (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:69:21)",
+              "RestApi.configureDeployment (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:387:32)",
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiDeploymentStageprodBDA5121C",
+            "trace": [
+              "new Stage (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:186:22)",
+              "RestApi.configureDeployment (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:397:30)",
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiEndpoint4BC83D66",
+            "trace": [
+              "RestApi.configureDeployment (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:402:7)",
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiCloudWatchRole4E212EDD",
+            "trace": [
+              "new Role (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "RestApi.configureCloudWatchRole (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:411:18)",
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:249:12)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiAccount136683D0",
+            "trace": [
+              "RestApi.configureCloudWatchRole (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:416:22)",
+              "new RestApi (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:249:12)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:17:21)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Default/GET/ApiPermission.IsupStackIsupisupapiD3F9C5B2.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiGETApiPermissionIsupStackIsupisupapiD3F9C5B2GET3E24D384",
+            "trace": [
+              "Function.addPermission (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:197:5)",
+              "LambdaIntegration.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:60:18)",
+              "Method.renderIntegration (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:189:17)",
+              "new Method (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:130:25)",
+              "RootResource.addMethod (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:26:18)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Default/GET/ApiPermission.Test.IsupStackIsupisupapiD3F9C5B2.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiGETApiPermissionTestIsupStackIsupisupapiD3F9C5B2GETB0E6F81E",
+            "trace": [
+              "Function.addPermission (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:197:5)",
+              "LambdaIntegration.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:68:20)",
+              "Method.renderIntegration (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:189:17)",
+              "new Method (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:130:25)",
+              "RootResource.addMethod (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:26:18)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/Isup/isup-api/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IsupisupapiGET1EA4B9E0",
+            "trace": [
+              "new Method (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:136:22)",
+              "RootResource.addMethod (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:26:18)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3BucketDE6421E3",
+            "trace": [
+              "new FileAssetParameters (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "IsupStack.addFileAsset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:424:29)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3VersionKey967ED7C1",
+            "trace": [
+              "new FileAssetParameters (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "IsupStack.addFileAsset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:424:29)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8ArtifactHash3852216B",
+            "trace": [
+              "new FileAssetParameters (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "IsupStack.addFileAsset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/clarkj84/workspace/isup/node_modules/@aws-cdk/aws-lambda/lib/function.ts:424:29)",
+              "new IsupService (/Users/clarkj84/workspace/isup/lib/isup_service.ts:10:25)",
+              "new IsupStack (/Users/clarkj84/workspace/isup/lib/isup-stack.ts:8:5)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/bin/isup.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Module.m._compile (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "main (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/clarkj84/workspace/isup/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:816:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:827:10)",
+              "Module.load (internal/modules/cjs/loader.js:685:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:620:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:877:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npx/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.18.0",
+      "@aws-cdk/cx-api": "1.18.0",
+      "@aws-cdk/aws-apigateway": "1.18.0",
+      "@aws-cdk/aws-iam": "1.18.0",
+      "@aws-cdk/region-info": "1.18.0",
+      "@aws-cdk/aws-lambda": "1.18.0",
+      "@aws-cdk/aws-cloudwatch": "1.18.0",
+      "@aws-cdk/aws-ec2": "1.18.0",
+      "@aws-cdk/aws-ssm": "1.18.0",
+      "@aws-cdk/aws-sqs": "1.18.0",
+      "@aws-cdk/aws-kms": "1.18.0",
+      "@aws-cdk/aws-s3-assets": "1.18.0",
+      "@aws-cdk/assets": "1.18.0",
+      "@aws-cdk/aws-s3": "1.18.0",
+      "@aws-cdk/aws-events": "1.18.0",
+      "jsii-runtime": "node.js/v11.14.0"
+    }
+  }
+}

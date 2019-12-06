@@ -1,0 +1,432 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "IsupStack": {
+        "id": "IsupStack",
+        "path": "IsupStack",
+        "children": {
+          "Isup": {
+            "id": "Isup",
+            "path": "IsupStack/Isup",
+            "children": {
+              "IsupHandler": {
+                "id": "IsupHandler",
+                "path": "IsupStack/Isup/IsupHandler",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "IsupStack/Isup/IsupHandler/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "IsupStack/Isup/IsupHandler/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "IsupStack/Isup/IsupHandler/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "IsupStack/Isup/IsupHandler/Code/Stage"
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "IsupStack/Isup/IsupHandler/Code/AssetBucket"
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "IsupStack/Isup/IsupHandler/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": {
+                            "Ref": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3BucketDE6421E3"
+                          },
+                          "s3Key": {
+                            "Fn::Join": [
+                              "",
+                              [
+                                {
+                                  "Fn::Select": [
+                                    0,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3VersionKey967ED7C1"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Fn::Select": [
+                                    1,
+                                    {
+                                      "Fn::Split": [
+                                        "||",
+                                        {
+                                          "Ref": "AssetParameters25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8S3VersionKey967ED7C1"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        },
+                        "handler": "isup.main",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "IsupIsupHandlerServiceRole6D52EFB2",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs8.10",
+                        "timeout": 300
+                      }
+                    }
+                  }
+                }
+              },
+              "isup-api": {
+                "id": "isup-api",
+                "path": "IsupStack/Isup/isup-api",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "IsupStack/Isup/isup-api/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                      "aws:cdk:cloudformation:props": {
+                        "description": "This service serves isup.",
+                        "name": "Isup Service"
+                      }
+                    }
+                  },
+                  "Deployment": {
+                    "id": "Deployment",
+                    "path": "IsupStack/Isup/isup-api/Deployment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "IsupStack/Isup/isup-api/Deployment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                          "aws:cdk:cloudformation:props": {
+                            "restApiId": {
+                              "Ref": "IsupisupapiF0E94915"
+                            },
+                            "description": "Automatically created by the RestApi construct"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "DeploymentStage.prod": {
+                    "id": "DeploymentStage.prod",
+                    "path": "IsupStack/Isup/isup-api/DeploymentStage.prod",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "IsupStack/Isup/isup-api/DeploymentStage.prod/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                          "aws:cdk:cloudformation:props": {
+                            "restApiId": {
+                              "Ref": "IsupisupapiF0E94915"
+                            },
+                            "deploymentId": {
+                              "Ref": "IsupisupapiDeployment12B17A4E86a7b8c49711f01deedb1c3fdeca4450"
+                            },
+                            "stageName": "prod"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Endpoint": {
+                    "id": "Endpoint",
+                    "path": "IsupStack/Isup/isup-api/Endpoint"
+                  },
+                  "CloudWatchRole": {
+                    "id": "CloudWatchRole",
+                    "path": "IsupStack/Isup/isup-api/CloudWatchRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "IsupStack/Isup/isup-api/CloudWatchRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "apigateway.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Account": {
+                    "id": "Account",
+                    "path": "IsupStack/Isup/isup-api/Account",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                      "aws:cdk:cloudformation:props": {
+                        "cloudWatchRoleArn": {
+                          "Fn::GetAtt": [
+                            "IsupisupapiCloudWatchRole4E212EDD",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "Default": {
+                    "id": "Default",
+                    "path": "IsupStack/Isup/isup-api/Default",
+                    "children": {
+                      "GET": {
+                        "id": "GET",
+                        "path": "IsupStack/Isup/isup-api/Default/GET",
+                        "children": {
+                          "ApiPermission.IsupStackIsupisupapiD3F9C5B2.GET..": {
+                            "id": "ApiPermission.IsupStackIsupisupapiD3F9C5B2.GET..",
+                            "path": "IsupStack/Isup/isup-api/Default/GET/ApiPermission.IsupStackIsupisupapiD3F9C5B2.GET..",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "IsupIsupHandler87FD3F73",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "IsupisupapiF0E94915"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "IsupisupapiDeploymentStageprodBDA5121C"
+                                      },
+                                      "/GET/"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ApiPermission.Test.IsupStackIsupisupapiD3F9C5B2.GET..": {
+                            "id": "ApiPermission.Test.IsupStackIsupisupapiD3F9C5B2.GET..",
+                            "path": "IsupStack/Isup/isup-api/Default/GET/ApiPermission.Test.IsupStackIsupisupapiD3F9C5B2.GET..",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "IsupIsupHandler87FD3F73",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "IsupisupapiF0E94915"
+                                      },
+                                      "/test-invoke-stage/GET/"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "IsupStack/Isup/isup-api/Default/GET/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "GET",
+                                "resourceId": {
+                                  "Fn::GetAtt": [
+                                    "IsupisupapiF0E94915",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "restApiId": {
+                                  "Ref": "IsupisupapiF0E94915"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:",
+                                        {
+                                          "Ref": "AWS::Region"
+                                        },
+                                        ":lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "IsupIsupHandler87FD3F73",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST",
+                                  "requestTemplates": {
+                                    "application/json": "{ \"statusCode\": \"200\" }"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "IsupStack/AssetParameters",
+            "children": {
+              "25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8": {
+                "id": "25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8",
+                "path": "IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "IsupStack/AssetParameters/25e306bea5a91e982d58695713c7efd19caaa589332d997f5c43f168b99760c8/ArtifactHash"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
